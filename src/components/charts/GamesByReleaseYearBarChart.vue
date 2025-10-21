@@ -30,8 +30,10 @@
 			};
 
             for (const elem of this.dataset.TotalGamesReleasedByYears) {
-				data.labels.push(elem.ReleaseYear);
-				data.datasets[0].data.push(elem.Count);
+				if (elem.ReleaseYear > 1) {
+					data.labels.push(elem.ReleaseYear);
+					data.datasets[0].data.push(elem.Count);
+				}
 			}
 
 			const config = {
